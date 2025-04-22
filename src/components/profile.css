@@ -1,0 +1,175 @@
+/* Profile Page Styles */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-card {
+    background: #000;
+    border: 1px solid #333;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 900px;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Banner */
+  .banner-container {
+    position: relative;
+    height: 200px;
+  }
+  
+  .profile-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .banner-input {
+    display: none;
+  }
+  
+  .banner-edit-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1da1f2;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .banner-edit-btn:hover {
+    background: #1991db;
+  }
+  
+  /* Avatar */
+  .avatar-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: -60px 1.5rem 1rem; /* Left-align with margin from left edge */
+  }
+  
+  /* Form container to handle content alignment */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align form content to the left */
+    padding: 1.5rem;
+  }
+  
+  .user-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #000;
+  }
+  
+  .avatar-input {
+    display: none;
+  }
+  
+  .avatar-edit-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #1da1f2;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .avatar-edit-btn:hover {
+    background: #1991db;
+  }
+  
+  /* Form */
+  .profile-form {
+    width: 100%;
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-label {
+    display: block;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .input-field,
+  .bio-input {
+    width: 100%;
+    padding: 0.75rem;
+    background: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .input-field:focus,
+  .bio-input:focus {
+    outline: none;
+    border-color: #1da1f2;
+  }
+  
+  .bio-input {
+    height: 100px;
+    resize: none;
+  }
+  
+  .input-field::placeholder,
+  .bio-input::placeholder {
+    color: #888;
+  }
+  
+  .submit-btn {
+    background: #1da1f2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background: #1991db;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .profile-card {
+      border-radius: 0;
+    }
+  
+    .banner-container {
+      height: 150px;
+    }
+  
+    .avatar-container {
+      margin: -50px 1rem 1rem; /* Adjusted for smaller screens */
+      width: 100px;
+      height: 100px;
+    }
+  }
