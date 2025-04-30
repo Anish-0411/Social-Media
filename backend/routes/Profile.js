@@ -1,12 +1,12 @@
 const express = require('express');
-const Profile = require('../models/Profile'); // Or require('../models/User')
+const Profile = require('../models/Profile');
 const auth = require('../middleware/auth');
 
 const router = express.Router();
 
 router.get('/:id', async (req, res) => {
   try {
-    const user = await Profile.findById(req.params.id).select('-password'); // Or User.findById
+    const user = await Profile.findById(req.params.id).select('-password'); 
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user);
   } catch (err) {
@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
 router.put('/:id', auth, async (req, res) => {
   try {
     const { username, bio, profilePic, banner } = req.body;
-    const user = await Profile.findById(req.params.id); // Or User.findById
+    const user = await Profile.findById(req.params.id); 
     if (!user) return res.status(404).json({ message: 'User not found' });
 
     if (user._id.toString() !== req.user.id) {

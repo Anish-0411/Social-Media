@@ -34,16 +34,19 @@ const BookmarksPage = () => {
                             onClick={() => removeBookmark(index)}
                             style={{
                                 position: 'absolute',
-                                top: 10,
-                                right: 10,
-                                background: 'red',
-                                color: 'white',
-                                padding: '5px 10px',
-                                border: 'none',
-                                borderRadius: '5px',
+                                top: 12,
+                                right: 12,
+                                backgroundColor: '#1a1a1a',
+                                color: '#f1f1f1',
+                                padding: '6px 12px',
+                                border: '1px solid #333',
+                                borderRadius: '8px',
+                                fontSize: '0.9rem',
+                                cursor: 'pointer',
+                                transition: 'background 0.3s ease',
                             }}
                         >
-                            🗑️ Remove
+                             Remove
                         </button>
                     </div>
                 ))

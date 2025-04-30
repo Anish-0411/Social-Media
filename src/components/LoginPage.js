@@ -18,6 +18,7 @@ const LoginSignupPage = () => {
       alert(err.response?.data?.message || "Error");
     }
   };
+  
 
   return (
     <div className="auth-container">

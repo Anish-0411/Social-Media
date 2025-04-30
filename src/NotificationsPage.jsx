@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import NotificationCard from "./components/NotificationCard";
-import socket from "./socket"; // Make sure path is correct
+import socket from "./socket";
 
 const NotificationsPage = () => {
   const [notifications, setNotifications] = useState([
-    // Initial static notifications (optional)
     {
       id: 1,
       type: "follow-request",
@@ -26,6 +25,76 @@ const NotificationsPage = () => {
       avatar: "https://i.pravatar.cc/150?img=60",
       message: "Alex posted a new update.",
     },
+    {
+      id: 4,
+      type: "like",
+      user: "Emily Carter",
+      avatar: "https://i.pravatar.cc/150?img=12",
+      message: "Emily liked your post.",
+    },
+    {
+      id: 5,
+      type: "mention",
+      user: "Michael Lee",
+      avatar: "https://i.pravatar.cc/150?img=24",
+      message: "Michael mentioned you in a comment.",
+    },
+    {
+      id: 6,
+      type: "follow-request",
+      user: "Sofia Perez",
+      avatar: "https://i.pravatar.cc/150?img=17",
+      message: "Sofia sent you a follow request.",
+    },
+    {
+      id: 7,
+      type: "message",
+      user: "Liam Brown",
+      avatar: "https://i.pravatar.cc/150?img=29",
+      message: "Liam sent you a new message.",
+    },
+    {
+      id: 8,
+      type: "tag",
+      user: "Noah Wilson",
+      avatar: "https://i.pravatar.cc/150?img=38",
+      message: "Noah tagged you in a photo.",
+    },
+    {
+      id: 9,
+      type: "like",
+      user: "Chloe Davis",
+      avatar: "https://i.pravatar.cc/150?img=41",
+      message: "Chloe liked your comment.",
+    },
+    {
+      id: 10,
+      type: "comment",
+      user: "Lucas Thompson",
+      avatar: "https://i.pravatar.cc/150?img=50",
+      message: "Lucas replied to your comment.",
+    },
+    {
+      id: 11,
+      type: "new-post",
+      user: "Olivia Martinez",
+      avatar: "https://i.pravatar.cc/150?img=61",
+      message: "Olivia posted a new update.",
+    },
+    {
+      id: 12,
+      type: "message",
+      user: "Ethan White",
+      avatar: "https://i.pravatar.cc/150?img=72",
+      message: "Ethan sent you a new message.",
+    },
+    {
+      id: 13,
+      type: "follow-request",
+      user: "Ava Robinson",
+      avatar: "https://i.pravatar.cc/150?img=89",
+      message: "Ava sent you a follow request.",
+    }
   ]);
 
   useEffect(() => {
@@ -53,66 +122,3 @@ const NotificationsPage = () => {
 
 export default NotificationsPage;
 
-
-
-// import React, { useState, useEffect } from 'react';
-
-
-// const sampleNotifications = [
-//   {
-//     id: 1,
-//     type: 'follow',
-//     message: 'John Doe started following you.',
-//     time: '2 mins ago',
-//   },
-//   {
-//     id: 2,
-//     type: 'comment',
-//     message: 'Jane commented on your post.',
-//     time: '10 mins ago',
-//   },
-//   {
-//     id: 3,
-//     type: 'post',
-//     message: 'Alex posted a new photo.',
-//     time: '1 hour ago',
-//   },
-// ];
-
-// const NotificationsPage = () => {
-//   const [notifications, setNotifications] = useState([]);
-
-//   useEffect(() => {
-//     // Simulating API fetch
-//     setTimeout(() => {
-//       setNotifications(sampleNotifications);
-//     }, 1000);
-//   }, []);
-
-//   return (
-//     <div className="notifications-container">
-//       <h2>Notifications</h2>
-//       {notifications.length === 0 ? (
-//         <p className="loading">Loading notifications...</p>
-//       ) : (
-//         <ul className="notifications-list">
-//           {notifications.map((notification) => (
-//             <li key={notification.id} className={`notification-item ${notification.type}`}>
-//               <div className="notification-icon">
-//                 {notification.type === 'follow' && '👤'}
-//                 {notification.type === 'comment' && '💬'}
-//                 {notification.type === 'post' && '📷'}
-//               </div>
-//               <div className="notification-content">
-//                 <p className="message">{notification.message}</p>
-//                 <span className="time">{notification.time}</span>
-//               </div>
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default NotificationsPage;

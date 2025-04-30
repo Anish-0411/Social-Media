@@ -9,21 +9,61 @@ const ExplorePage = () => {
 
   const token = localStorage.getItem("token");
 
+  // useEffect(() => {
+  //   const fetchUsers = async () => {
+  //     try {
+  //       const res = await axios.get("http://localhost:5050/api/users", {
+  //         headers: { Authorization: `Bearer ${token}` },
+  //       });
+  //       setUsers(res.data);
+  //     } catch (err) {
+  //       console.error("Error fetching users", err);
+  //     }
+  //   };
+
+  //   fetchUsers();
+  // }, [token]);
+  
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await axios.get("http://localhost:5050/api/users", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setUsers(res.data);
-      } catch (err) {
-        console.error("Error fetching users", err);
-      }
-    };
-
-    fetchUsers();
-  }, [token]);
-
+    const dummyUsers = [
+      {
+        _id: "1",
+        gmail: "alice@example.com",
+        name: "Alice Johnson",
+        avatar: "https://i.pravatar.cc/150?img=1",
+        bio: "Traveler. Dreamer. Foodie.",
+      },
+      {
+        _id: "2",
+        gmail: "bob@example.com",
+        name: "Bob Smith",
+        avatar: "https://i.pravatar.cc/150?img=2",
+        bio: "Coding and coffee ☕",
+      },
+      {
+        _id: "3",
+        gmail: "charlie@example.com",
+        name: "Charlie Ray",
+        avatar: "https://i.pravatar.cc/150?img=3",
+        bio: "Love sharing music and books 🎧📚",
+      },
+      {
+        _id: "4",
+        gmail: "diana@example.com",
+        name: "Diana Prince",
+        avatar: "https://i.pravatar.cc/150?img=4",
+        bio: "Wondering through life 🌍",
+      },
+      {
+        _id: "5",
+        gmail: "eve@example.com",
+        name: "Eve Walker",
+        avatar: "https://i.pravatar.cc/150?img=5",
+        bio: "UX designer & weekend baker 🧁",
+      },
+    ];
+    setUsers(dummyUsers);
+  }, []);
   const handleFollow = async (id) => {
     try {
       await axios.post(`http://localhost:5050/api/users/follow/${id}`, {}, {

@@ -28,7 +28,7 @@ function Feed() {
 
     return (
         <div className="feed">
-            <h1>Your Feed</h1>
+            
             <PostForm onAddPost={addPost} />
             {posts.map((post, index) => (
                 <Post key={index} {...post} />
@@ -38,21 +38,3 @@ function Feed() {
 }
 
 export default Feed;
-
-
-
-
-// function Feed() {
-  
-
-//   return (
-//     <div className="feed">
-//       <h1>Your Feed</h1>
-//       {posts.map((post, index) => (
-//         <Post key={index} {...post} />
-//       ))}
-//     </div>
-//   );
-// }
-
-// export default Feed;

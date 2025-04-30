@@ -3,12 +3,12 @@ import React from "react";
 const FollowersBar = () => {
   const getRandomFollowers = () => {
     const allFollowers = [
-      "Alice Johnson",
-      "Bob Smith",
-      "Charlie Doe",
-      "Daisy Carter",
-      "Ethan Blake",
-      "Fiona Miles"
+      "Avinash Reddy",
+      "Reddy Babu",
+      "Daniel",
+      "Hemanth Hems",
+      "Abhiram",
+      "Ashish"
     ];
     const shuffled = [...allFollowers].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, Math.floor(Math.random() * 2) + 3); 

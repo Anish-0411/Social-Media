@@ -22,7 +22,7 @@ router.post('/', auth, async (req, res) => {
     const post = new Post({ userId: req.user.id, type, content, mediaSrc });
     await post.save();
 
-    const user = await require('../models/Profile').findById(req.user.id); // Or require('../models/User') if using User.js
+    const user = await require('../models/Profile').findById(req.user.id); 
     user.followers.forEach(async (followerId) => {
       const notification = new Notification({
         userId: followerId,
@@ -51,7 +51,7 @@ router.post('/:id/like', auth, async (req, res) => {
     } else {
       post.likes.push(req.user.id);
       if (post.userId.toString() !== req.user.id) {
-        const user = await require('../models/Profile').findById(req.user.id); // Or require('../models/User')
+        const user = await require('../models/Profile').findById(req.user.id); 
         const notification = new Notification({
           userId: post.userId,
           type: 'like',
@@ -80,7 +80,7 @@ router.post('/:id/comment', auth, async (req, res) => {
     await post.save();
 
     if (post.userId.toString() !== req.user.id) {
-      const user = await require('../models/Profile').findById(req.user.id); // Or require('../models/User')
+      const user = await require('../models/Profile').findById(req.user.id); 
       const notification = new Notification({
         userId: post.userId,
         type: 'comment',

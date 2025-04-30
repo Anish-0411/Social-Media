@@ -13,8 +13,16 @@ const MessagePage = () => {
 
   const currentUser = 'Alice'; // Replace with logged-in user (e.g., from auth context)
   const followers = [
-    { name: 'Bob Smith', img: 'profile2.jpg', id: 'bob123' },
-    { name: 'Alice Johnson', img: 'profile1.jpg', id: 'alice456' },
+    
+      { name: "Avinash Reddy", img: "https://i.pravatar.cc/150?u=avinash", id: "avinash-reddy" },
+      { name: "Reddy Babu", img: "https://i.pravatar.cc/150?u=reddy", id: "reddy-babu" },
+      { name: "Daniel", img: "https://i.pravatar.cc/150?u=daniel", id: "daniel" },
+      { name: "Hemanth Hems", img: "https://i.pravatar.cc/150?u=hemanth", id: "hemanth-hems" },
+      { name: "Abhiram", img: "https://i.pravatar.cc/150?u=abhiram", id: "abhiram" },
+      { name: "Ashish", img: "https://i.pravatar.cc/150?u=ashish", id: "ashish" },
+      { name: "Bob Smith", img: "profile2.jpg", id: "bob123" },
+      { name: "Virat Kohli", img: "profile1.jpg", id: "alice456" }
+    
   ];
 
   useEffect(() => {

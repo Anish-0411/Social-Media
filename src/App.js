@@ -41,6 +41,7 @@
 
 // export default App;
 // src/App.js
+
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
@@ -51,7 +52,7 @@ import socket from './socket';
 import { useEffect } from 'react';
 
 function App() {
-  const userId = localStorage.getItem('userId'); // Or use from your auth state
+  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
     if (userId) {

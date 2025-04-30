@@ -1,5 +1,5 @@
 const express = require('express');
-const Profile = require('../models/Profile'); // Or require('../models/User')
+const Profile = require('../models/Profile'); 
 const Notification = require('../models/Notification');
 const auth = require('../middleware/auth');
 
@@ -8,8 +8,8 @@ const router = express.Router();
 router.post('/follow', auth, async (req, res) => {
   try {
     const { followingId } = req.body;
-    const user = await Profile.findById(req.user.id); // Or User.findById
-    const followingUser = await Profile.findById(followingId); // Or User.findById
+    const user = await Profile.findById(req.user.id); 
+    const followingUser = await Profile.findById(followingId); 
 
     if (!followingUser) return res.status(404).json({ message: 'User not found' });
 
@@ -37,8 +37,8 @@ router.post('/follow', auth, async (req, res) => {
 router.post('/unfollow', auth, async (req, res) => {
   try {
     const { followingId } = req.body;
-    const user = await Profile.findById(req.user.id); // Or User.findById
-    const followingUser = await Profile.findById(followingId); // Or User.findById
+    const user = await Profile.findById(req.user.id); 
+    const followingUser = await Profile.findById(followingId); 
 
     if (!followingUser) return res.status(404).json({ message: 'User not found' });
 
@@ -55,7 +55,7 @@ router.post('/unfollow', auth, async (req, res) => {
 
 router.get('/:userId', async (req, res) => {
   try {
-    const user = await Profile.findById(req.params.userId).populate('followers', 'username profilePic'); // Or User.findById
+    const user = await Profile.findById(req.params.userId).populate('followers', 'username profilePic');
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user.followers);
   } catch (err) {
@@ -65,7 +65,7 @@ router.get('/:userId', async (req, res) => {
 
 router.get('/following/:userId', async (req, res) => {
   try {
-    const user = await Profile.findById(req.params.userId).populate('following', 'username profilePic'); // Or User.findById
+    const user = await Profile.findById(req.params.userId).populate('following', 'username profilePic');
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user.following);
   } catch (err) {
@@ -76,7 +76,7 @@ router.get('/following/:userId', async (req, res) => {
 router.get('/search/:query', async (req, res) => {
   try {
     const query = req.params.query;
-    const users = await Profile.find({ // Or User.find
+    const users = await Profile.find({
       username: { $regex: query, $options: 'i' },
     }).select('username profilePic bio');
     res.json(users);

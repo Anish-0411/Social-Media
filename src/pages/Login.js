@@ -14,7 +14,6 @@ const Login = () => {
     try {
       const res = await axios.post('http://localhost:5050/api/auth/login', { gmail, password });
 
-      // Store token and user in localStorage
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
 

@@ -121,7 +121,7 @@ import profilePic from '../assets/Passport.jpeg';
 import PostForm from './PostForm';
 
 const handleLogout = () => {
-    localStorage.removeItem("user"); // this is the key you're using in ProtectedRoute
+    localStorage.removeItem("user"); 
     window.location.href = "/login";
   };
   
